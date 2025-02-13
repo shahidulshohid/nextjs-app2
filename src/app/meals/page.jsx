@@ -22,8 +22,8 @@ const MealsPage = () => {
   }, [search]);
   return (
     <div>
-    <div>
-        <input type="text" placeholder="search" onChange={(e) => setSearch(e.target.value)} />
+    <div className="text-center">
+        <input className="text-black border p-2" value={search} type="text" placeholder="search" onChange={(e) => setSearch(e.target.value)} />
     </div>
     <div className="grid grid-cols-4 gap-4">
       {
