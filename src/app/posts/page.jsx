@@ -15,7 +15,7 @@ const Posts = async() => {
                 return (
                     <div key={singlePost.id} className='border-2 border-slate-300'>
                         <p className='text-2xl font-bold'>{singlePost.title}</p>
-                        <p className='font-semibold'>{singlePost.body}</p>
+                        <p className='font-semibold testing-purpose-css-class'>{singlePost.body}</p>
                         <Link href={`/posts/${singlePost.id}`}><button className="bg-green-300 text-black px-2 py-1 rounded-sm">Details</button></Link>
                     </div>
                 )
