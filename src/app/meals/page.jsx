@@ -1,12 +1,12 @@
 import MealSearchInput from "./components/MealSearchInput";
 
 
-const MealsPage = () => {
-  const meals = []
+const MealsPage = async ({searchParams}) => {
+  const query = await searchParams
   const fetchMeals = async () => {
     try {
       const res = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${query.search}`
       );
       const data = await res.json();
       // setMeals(data?.meals || []);
@@ -16,10 +16,13 @@ const MealsPage = () => {
         return []
     }
   };
+  const meals = await fetchMeals()
   return (
     <div>
-    <div className="grid grid-cols-4 gap-4">
+      <div className="flex justify-center">
       <MealSearchInput></MealSearchInput>
+      </div>
+    <div className="grid grid-cols-4 gap-4">
       {
         meals?.map(singleMeal => {
             return (
