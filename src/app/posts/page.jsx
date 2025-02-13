@@ -13,10 +13,10 @@ const Posts = async() => {
         <div className="grid grid-cols-4 gap-8">
             {posts.map(singlePost => {
                 return (
-                    <div key={singlePost.id}>
-                        <p>{singlePost.title}</p>
-                        <p>{singlePost.body}</p>
-                        <Link href={`/posts/${singlePost.id}`}>Details</Link>
+                    <div key={singlePost.id} className='border-2 border-slate-300'>
+                        <p className='text-2xl font-bold'>{singlePost.title}</p>
+                        <p className='font-semibold'>{singlePost.body}</p>
+                        <Link href={`/posts/${singlePost.id}`}><button className="bg-green-300 text-black px-2 py-1 rounded-sm">Details</button></Link>
                     </div>
                 )
             })}

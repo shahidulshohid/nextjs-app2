@@ -10,7 +10,9 @@ const SinglePost = async ({params}) => {
     const singlePost = await getSinglePost(p.id)
     return (
         <div>
-           singlePost({JSON.stringify(singlePost)})
+           <p>{JSON.stringify(singlePost)}</p>
+           <p>{singlePost.title}</p>
+           <p>{singlePost.body}</p>
         </div>
     );
 };
