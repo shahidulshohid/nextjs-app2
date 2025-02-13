@@ -5,6 +5,8 @@ export const getSinglePost = async (post_id) => {
     const data = await res.json()
     return data 
 }
+
+
 const SinglePost = async ({params}) => {
     const p = await params
     const singlePost = await getSinglePost(p.id)
